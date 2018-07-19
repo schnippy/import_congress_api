@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.legislator.body
+    - field.field.node.legislator.feeds_item
+    - field.field.node.legislator.field_ct_bioguide
+    - field.field.node.legislator.field_ct_chamber
+    - field.field.node.legislator.field_ct_district
+    - field.field.node.legislator.field_ct_facebook
+    - field.field.node.legislator.field_ct_first_name
+    - field.field.node.legislator.field_ct_gender
+    - field.field.node.legislator.field_ct_google_entity
+    - field.field.node.legislator.field_ct_govtrack
+    - field.field.node.legislator.field_ct_in_office
+    - field.field.node.legislator.field_ct_last_name
+    - field.field.node.legislator.field_ct_middle_name
+    - field.field.node.legislator.field_ct_name_prefix
+    - field.field.node.legislator.field_ct_name_suffix
+    - field.field.node.legislator.field_ct_next_election
+    - field.field.node.legislator.field_ct_party
+    - field.field.node.legislator.field_ct_twitter
+    - field.field.node.legislator.field_ct_voting_percentage
+    - field.field.node.legislator.field_ct_website
+    - field.field.node.legislator.field_ct_website_contact
+    - field.field.node.legislator.field_ct_youtube
+    - node.type.legislator
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.legislator.teaser
+targetEntityType: node
+bundle: legislator
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_ct_bioguide: true
+  field_ct_chamber: true
+  field_ct_district: true
+  field_ct_facebook: true
+  field_ct_first_name: true
+  field_ct_gender: true
+  field_ct_google_entity: true
+  field_ct_govtrack: true
+  field_ct_in_office: true
+  field_ct_last_name: true
+  field_ct_middle_name: true
+  field_ct_name_prefix: true
+  field_ct_name_suffix: true
+  field_ct_next_election: true
+  field_ct_party: true
+  field_ct_twitter: true
+  field_ct_voting_percentage: true
+  field_ct_website: true
+  field_ct_website_contact: true
+  field_ct_youtube: true

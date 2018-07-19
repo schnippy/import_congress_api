@@ -1,0 +1,249 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.legislator.body
+    - field.field.node.legislator.feeds_item
+    - field.field.node.legislator.field_ct_bioguide
+    - field.field.node.legislator.field_ct_chamber
+    - field.field.node.legislator.field_ct_district
+    - field.field.node.legislator.field_ct_facebook
+    - field.field.node.legislator.field_ct_first_name
+    - field.field.node.legislator.field_ct_gender
+    - field.field.node.legislator.field_ct_google_entity
+    - field.field.node.legislator.field_ct_govtrack
+    - field.field.node.legislator.field_ct_in_office
+    - field.field.node.legislator.field_ct_last_name
+    - field.field.node.legislator.field_ct_middle_name
+    - field.field.node.legislator.field_ct_name_prefix
+    - field.field.node.legislator.field_ct_name_suffix
+    - field.field.node.legislator.field_ct_next_election
+    - field.field.node.legislator.field_ct_party
+    - field.field.node.legislator.field_ct_seniority
+    - field.field.node.legislator.field_ct_state
+    - field.field.node.legislator.field_ct_state_rank
+    - field.field.node.legislator.field_ct_twitter
+    - field.field.node.legislator.field_ct_voting_percentage
+    - field.field.node.legislator.field_ct_website
+    - field.field.node.legislator.field_ct_website_contact
+    - field.field.node.legislator.field_ct_youtube
+    - node.type.legislator
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.legislator.default
+targetEntityType: node
+bundle: legislator
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ct_bioguide:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_chamber:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ct_district:
+    label: above
+    weight: 9
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_facebook:
+    label: above
+    weight: 5
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_first_name:
+    label: above
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_gender:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ct_google_entity:
+    label: above
+    weight: 21
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_govtrack:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ct_in_office:
+    weight: 110
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ct_last_name:
+    label: above
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_middle_name:
+    label: above
+    weight: 10
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_name_prefix:
+    label: above
+    weight: 22
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_name_suffix:
+    label: above
+    weight: 11
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_next_election:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ct_party:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ct_seniority:
+    weight: 113
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_ct_state:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ct_state_rank:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ct_twitter:
+    label: above
+    weight: 4
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ct_voting_percentage:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ct_website:
+    label: above
+    weight: 16
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_ct_website_contact:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ct_youtube:
+    label: above
+    weight: 15
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true

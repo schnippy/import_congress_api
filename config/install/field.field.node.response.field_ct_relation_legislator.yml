@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ct_relation_legislator
+    - node.type.legislator
+    - node.type.response
+id: node.response.field_ct_relation_legislator
+field_name: field_ct_relation_legislator
+entity_type: node
+bundle: response
+label: Legislator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      legislator: legislator
+field_type: entity_reference

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.response.body
+    - field.field.node.response.field_ct_date
+    - field.field.node.response.field_ct_relation_legislator
+    - field.field.node.response.field_ct_relation_position
+    - field.field.node.response.field_ct_response_url
+    - field.field.node.response.field_ct_screenshot
+    - node.type.response
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.response.teaser
+targetEntityType: node
+bundle: response
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_ct_date: true
+  field_ct_relation_legislator: true
+  field_ct_relation_position: true
+  field_ct_response_url: true
+  field_ct_screenshot: true

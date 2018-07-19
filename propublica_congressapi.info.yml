@@ -1,0 +1,21 @@
+name: propublica_congressapi
+type: module
+core: 8.x
+dependencies:
+  - content_moderation
+  - datetime
+  - feeds
+  - field
+  - field_group
+  - field_layout
+  - image
+  - layout_discovery
+  - link
+  - migrate_plus
+  - node
+  - options
+  - path
+  - text
+  - user
+version: 8.x-1.0
+package: Legislator

@@ -1,0 +1,235 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - crowdtally_import
+id: import_senate
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: crowdtally_legislators
+label: 'Senators into legislator direct from ProPublica'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'http:///json/wrapper/senate.json'
+  headers:
+    X-API-Key: 
+  item_selector: members
+  ids:
+    id:
+      type: string
+  fields:
+    -
+      name: id
+      label: Id
+      selector: /id
+    -
+      name: title
+      label: Title
+      selector: /title
+    -
+      name: short_title
+      label: 'Short Title'
+      selector: /short_title
+    -
+      name: api_uri
+      label: 'API URI'
+      selector: /api_uri
+    -
+      name: first_name
+      label: 'First Name'
+      selector: /first_name
+    -
+      name: middle_name
+      label: 'Middle Name'
+      selector: /middle_name
+    -
+      name: last_name
+      label: 'Last Name'
+      selector: /last_name
+    -
+      name: suffix
+      label: Suffix
+      selector: /suffix
+    -
+      name: date_of_birth
+      label: 'Date of Birth'
+      selector: /date_of_birth
+    -
+      name: gender
+      label: Gender
+      selector: /gender
+    -
+      name: party
+      label: Party
+      selector: /party
+    -
+      name: leadership_role
+      label: 'Leadership Role'
+      selector: /leadership_role
+    -
+      name: twitter_account
+      label: 'Twitter Account'
+      selector: /twitter_account
+    -
+      name: facebook_account
+      label: 'Facebook Account'
+      selector: /facebook_account
+    -
+      name: youtube_account
+      label: 'Youtube Account'
+      selector: /youtube_account
+    -
+      name: govtrack_id
+      label: 'GovTrack ID'
+      selector: /govtrack_id
+    -
+      name: cspan_id
+      label: 'CSPAN ID'
+      selector: /cspan_id
+    -
+      name: votesmart_id
+      label: 'Votesmart ID'
+      selector: /votesmart_id
+    -
+      name: icpsr_id
+      label: 'ICPSR ID'
+      selector: /icpsr_id
+    -
+      name: crp_id
+      label: 'CRP ID'
+      selector: /crp_id
+    -
+      name: google_entity_id
+      label: 'Google Entity ID'
+      selector: /google_entity_id
+    -
+      name: fec_candidate_id
+      label: 'FEC Candidate ID'
+      selector: /fec_candidate_id
+    -
+      name: url
+      label: URL
+      selector: /url
+    -
+      name: rss_url
+      label: 'RSS URL'
+      selector: /rss_url
+    -
+      name: contact_form
+      label: 'Contact Form'
+      selector: /contact_form
+    -
+      name: in_office
+      label: 'In Office?'
+      selector: /in_office
+    -
+      name: dw_nominate
+      label: 'DW Nominate'
+      selector: /dw_nominate
+    -
+      name: ideal_point
+      label: 'Ideal Point'
+      selector: /ideal_point
+    -
+      name: seniority
+      label: Seniority
+      selector: /seniority
+    -
+      name: next_election
+      label: 'Next Election'
+      selector: /next_election
+    -
+      name: total_votes
+      label: 'Total Votes'
+      selector: /total_votes
+    -
+      name: missed_votes
+      label: 'Missed Votes'
+      selector: /missed_votes
+    -
+      name: total_present
+      label: 'Total Present'
+      selector: /total_present
+    -
+      name: ocd_id
+      label: 'OCD ID'
+      selector: /ocd_id
+    -
+      name: office
+      label: Office
+      selector: /office
+    -
+      name: phone
+      label: Phone
+      selector: /phone
+    -
+      name: fax
+      label: fax
+      selector: /fax
+    -
+      name: state
+      label: State
+      selector: /state
+    -
+      name: senate_class
+      label: 'Senate Class'
+      selector: /senate_class
+    -
+      name: state_rank
+      label: 'State Rank'
+      selector: /state_rank
+    -
+      name: lis_id
+      label: 'LIS ID'
+      selector: /lis_id
+    -
+      name: missed_votes_pct
+      label: 'Missed Votes Percentage'
+      selector: /missed_votes_pct
+    -
+      name: votes_with_party_pct
+      label: 'Votes with Party Percentage'
+      selector: /votes_with_party_pct
+process:
+  type:
+    plugin: default_value
+    default_value: legislator
+  field_ct_chamber:
+    plugin: default_value
+    default_value: Senate
+  field_ct_name_prefix: short_title
+  field_ct_first_name: first_name
+  field_ct_middle_name: middle_name
+  field_ct_last_name: last_name
+  field_ct_name_suffix: suffix
+  field_ct_gender: gender
+  field_ct_state: state
+  field_ct_party: party
+  field_ct_twitter: twitter_account
+  field_ct_facebook: facebook_account
+  field_ct_youtube: youtube_account
+  field_ct_govtrack: govtrack_id
+  field_ct_google_entity: google_entity_id
+  field_ct_bioguide: id
+  field_ct_website: url
+  field_ct_seniority: seniority
+  field_ct_state_rank: state_rank
+  field_ct_website_contact: contact_form
+  field_ct_in_office: in_office
+  field_ct_next_election: next_election
+  field_ct_voting_percentage: votes_with_party_pct
+  title:
+    plugin: concat
+    source:
+      - short_title
+      - first_name
+      - last_name
+    delimiter: ' '
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

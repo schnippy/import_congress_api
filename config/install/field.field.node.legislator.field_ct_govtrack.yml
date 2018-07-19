@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ct_govtrack
+    - node.type.legislator
+id: node.legislator.field_ct_govtrack
+field_name: field_ct_govtrack
+entity_type: node
+bundle: legislator
+label: 'GovTrack ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

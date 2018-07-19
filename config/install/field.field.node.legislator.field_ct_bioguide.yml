@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ct_bioguide
+    - node.type.legislator
+id: node.legislator.field_ct_bioguide
+field_name: field_ct_bioguide
+entity_type: node
+bundle: legislator
+label: Bioguide
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

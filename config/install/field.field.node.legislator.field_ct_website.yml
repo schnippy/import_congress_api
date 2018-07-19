@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ct_website
+    - node.type.legislator
+  module:
+    - link
+id: node.legislator.field_ct_website
+field_name: field_ct_website
+entity_type: node
+bundle: legislator
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link
